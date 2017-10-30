@@ -3,6 +3,10 @@ package leetcode;
 import java.util.Stack;
 
 public class Leetcode20 {
+    /*
+     * 我的问题： 1.没有stack类的概念,导致自己有数组与指针构建了stack
+     * 2.思维是按照从后往前的匹配方式来思考的问题,虽然结果正常,但可以尝试正常的思维,从前向后匹配
+     */
     public static boolean isVaild1(String str) {
         if (str == null || str.length() <= 0) return true;
         char[] charArr = str.toCharArray();
@@ -40,7 +44,7 @@ public class Leetcode20 {
         return stackPointer == -1;
     }
     
-    public static boolean isValid2(String str) {
+    public static boolean isValidAnswer(String str) {
         if (str == null || str.length() <= 0) return true;
         Stack<Character> tempStack = new Stack<Character>();
         for (int i = 0; i < str.length(); i++) {
@@ -64,6 +68,6 @@ public class Leetcode20 {
     }
     
     public static void main(String[] args) {
-        System.out.println(Leetcode20.isValid2("([}]}}"));
+        System.out.println(Leetcode20.isValidAnswer("([}]}}"));
     }
 }
